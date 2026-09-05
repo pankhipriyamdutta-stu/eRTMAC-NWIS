@@ -388,7 +388,7 @@ const WellControl = () => {
 
   return (
     <div className="flex flex-col h-full space-y-4 font-sans select-none">
-      
+
       {/* ================= TOP OPERATIONAL COMMAND HEADER ================= */}
       <div className="p-4 rounded-xl bg-white border border-slate-200 flex flex-wrap items-center justify-between gap-4 shrink-0 shadow-xs">
         <div className="flex items-center gap-3">
@@ -414,11 +414,10 @@ const WellControl = () => {
         <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
           <button
             onClick={() => setIsLiveStream(!isLiveStream)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold border transition ${
-              isLiveStream
-                ? 'bg-emerald-100 text-emerald-800 border-emerald-300 shadow-xs'
-                : 'bg-slate-100 text-slate-700 border-slate-300 hover:text-slate-900'
-            }`}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold border transition ${isLiveStream
+              ? 'bg-emerald-100 text-emerald-800 border-emerald-300 shadow-xs'
+              : 'bg-slate-100 text-slate-700 border-slate-300 hover:text-slate-900'
+              }`}
           >
             <RefreshCw size={12} /> {isLiveStream ? '● LIVE RIG SENSORS SYNC' : 'MANUAL FACILITY MODE'}
           </button>
@@ -433,55 +432,50 @@ const WellControl = () => {
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => setActiveSubTab('killSheet')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'killSheet'
-                ? 'bg-red-50 text-red-700 border border-red-200 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'killSheet'
+              ? 'bg-red-50 text-red-700 border border-red-200 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <Calculator size={14} /> Kill Sheet Facility (User & AI Inputs)
           </button>
 
           <button
             onClick={() => setActiveSubTab('wellboreGraphics')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'wellboreGraphics'
-                ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'wellboreGraphics'
+              ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <TrendingUp size={14} className="text-sky-600" /> Wellbore Dynamics & Influx Graphics
           </button>
 
           <button
             onClick={() => setActiveSubTab('bopActuators')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'bopActuators'
-                ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'bopActuators'
+              ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <Power size={14} /> Cameron 15K BOP & Digital Choke
           </button>
 
           <button
             onClick={() => setActiveSubTab('visualModels')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'visualModels'
-                ? 'bg-amber-100 text-amber-800 border border-amber-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'visualModels'
+              ? 'bg-amber-100 text-amber-800 border border-amber-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <ImageIcon size={14} /> Visual Well Center Gallery (Images)
           </button>
 
           <button
             onClick={() => setActiveSubTab('officialReport')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'officialReport'
-                ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'officialReport'
+              ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <FileText size={14} /> Official Well Control Report
           </button>
@@ -547,8 +541,8 @@ const WellControl = () => {
 
       {/* ================= TAB 1: KILL SHEET FACILITY (USER & AI VALUES) ================= */}
       {activeSubTab === 'killSheet' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
-          
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
+
           {/* Facility Header Container */}
           <div className="p-5 rounded-xl bg-white border border-slate-200 font-mono text-xs space-y-3 shadow-xs">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200">
@@ -627,7 +621,7 @@ const WellControl = () => {
 
             {/* 12 Parameter Input Boxes Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 pt-2">
-              
+
               {/* Box 1: Original Mud Weight */}
               <div className={`p-3 rounded-xl bg-slate-50 border transition ${facilityMode === 'aiPredicted' ? 'border-sky-400 bg-sky-50/50 shadow-xs' : 'border-slate-200'}`}>
                 <div className="flex items-center justify-between mb-1">
@@ -966,11 +960,11 @@ const WellControl = () => {
 
       {/* ================= TAB 2: WELLBORE DYNAMICS & INFLUX GRAPHICS ================= */}
       {activeSubTab === 'wellboreGraphics' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
-          
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
+
           {/* Top Row: Dynamic Wait & Weight Schedule & Gas Bubble Expansion */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            
+
             {/* Chart 1: Wait & Weight Schedule */}
             <div className="p-5 rounded-xl bg-white border border-slate-200 font-mono text-xs flex flex-col justify-between shadow-xs">
               <div className="flex items-center justify-between pb-2 border-b border-slate-200 mb-3">
@@ -1063,7 +1057,7 @@ const WellControl = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40 pointer-events-none"></div>
-                
+
                 {/* Live Overlaid Telemetry Labels */}
                 <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs border border-slate-300 shadow-xs rounded px-2.5 py-1 text-xs font-bold text-slate-900">
                   Surface RKB: 0m • Choke Backpressure: <span className="text-amber-600">{inputs.sicp} psi</span>
@@ -1107,13 +1101,13 @@ const WellControl = () => {
 
       {/* ================= TAB 3: CAMERON 15K BOP & DIGITAL CHOKE CONSOLE ================= */}
       {activeSubTab === 'bopActuators' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
-          
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            
+
             {/* Left 2 Cols: BOP Cutaway Graphic & Actuators */}
             <div className="lg:col-span-2 space-y-4">
-              
+
               {/* BOP Cutaway Image with Callouts */}
               <div className="p-5 rounded-xl bg-white border border-slate-200 font-mono text-xs space-y-3 shadow-xs">
                 <div className="flex items-center justify-between pb-2 border-b border-slate-200">
@@ -1132,7 +1126,7 @@ const WellControl = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/30 pointer-events-none"></div>
-                  
+
                   <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs border border-slate-300 shadow-xs rounded px-2.5 py-1 text-xs font-bold text-slate-900">
                     Upper Annular: <span className="text-sky-700">{bopStatus.annular}</span> (Regulated 1,500 psi)
                   </div>
@@ -1318,8 +1312,8 @@ const WellControl = () => {
 
       {/* ================= TAB 4: VISUAL WELL CENTER GALLERY & ENGINEERING MODELS ================= */}
       {activeSubTab === 'visualModels' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
-          
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
+
           {/* Main Selected Image Showcase */}
           <div className="p-5 rounded-xl bg-white border border-slate-200 font-mono text-xs space-y-4 shadow-xs">
             <div className="flex items-center justify-between pb-2 border-b border-slate-200">
@@ -1375,11 +1369,10 @@ const WellControl = () => {
               <button
                 key={idx}
                 onClick={() => setSelectedImageIndex(idx)}
-                className={`p-3 rounded-xl border text-left transition shadow-xs cursor-pointer ${
-                  selectedImageIndex === idx
-                    ? 'bg-sky-50 border-sky-500 shadow-sm'
-                    : 'bg-white border-slate-200 hover:border-slate-300'
-                }`}
+                className={`p-3 rounded-xl border text-left transition shadow-xs cursor-pointer ${selectedImageIndex === idx
+                  ? 'bg-sky-50 border-sky-500 shadow-sm'
+                  : 'bg-white border-slate-200 hover:border-slate-300'
+                  }`}
               >
                 <div className="rounded-lg overflow-hidden h-28 mb-2 border border-slate-200">
                   <img src={img.url} alt={img.title} className="w-full h-full object-cover" />
@@ -1395,16 +1388,16 @@ const WellControl = () => {
 
       {/* ================= TAB 5: OFFICIAL OIL INDIA WELL CONTROL REPORT ================= */}
       {activeSubTab === 'officialReport' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
-          
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
+
           <div className="p-6 rounded-xl bg-white border border-slate-200 font-mono text-xs space-y-4 shadow-xs">
-            
+
             {/* Header / Letterhead with Real Logo */}
             <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div className="flex items-center gap-4">
-                <img 
-                  src="/images/oil_india_logo.png" 
-                  alt="Oil India Logo" 
+                <img
+                  src="/images/oil_india_logo.png"
+                  alt="Oil India Logo"
                   className="h-16 w-auto object-contain shrink-0"
                   onError={(e) => {
                     e.target.onerror = null;

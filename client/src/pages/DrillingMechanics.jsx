@@ -222,7 +222,7 @@ const DrillingMechanics = () => {
   const handleAiPredictAndSolve = () => {
     const targetCcs = calcInputs.rockCcs || 7500;
     const bitD = calcInputs.bitDiameter || 8.5;
-    
+
     // AI predicts sweet-spot parameters avoiding buckling & resonance
     const optWob = parseFloat(Math.min(26.0, Math.max(16.0, bitD * 2.6)).toFixed(1));
     const optRpm = 125; // clears 105 RPM BHA resonance
@@ -541,7 +541,7 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
 
   return (
     <div className="flex flex-col h-full space-y-4 font-sans select-none">
-      
+
       {/* ================= TOP OPERATIONAL HEADER ================= */}
       <div className="p-4 rounded-xl bg-white border border-slate-200 flex flex-wrap items-center justify-between gap-4 shrink-0 shadow-xs">
         <div className="flex items-center gap-3">
@@ -585,66 +585,60 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => setActiveSubTab('manualFacility')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'manualFacility'
-                ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'manualFacility'
+              ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <Calculator size={14} /> Mechanics Calculator Facility
           </button>
 
           <button
             onClick={() => setActiveSubTab('aiOptimizer')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'aiOptimizer'
-                ? 'bg-red-50 text-red-700 border border-red-200 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'aiOptimizer'
+              ? 'bg-red-50 text-red-700 border border-red-200 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <Bot size={14} className="text-red-600" /> AI Predictive Copilot & Solution
           </button>
 
           <button
             onClick={() => setActiveSubTab('mechanicsLab')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'mechanicsLab'
-                ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'mechanicsLab'
+              ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <TrendingUp size={14} /> Mechanics Lab & Maurer Drill-Off
           </button>
 
           <button
             onClick={() => setActiveSubTab('sensorPlacement')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'sensorPlacement'
-                ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'sensorPlacement'
+              ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <Radio size={14} /> Sensor Placement & Telemetry
           </button>
 
           <button
             onClick={() => setActiveSubTab('diagnostics')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'diagnostics'
-                ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'diagnostics'
+              ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <ShieldAlert size={14} /> Autonomous Anomaly Engine
           </button>
 
           <button
             onClick={() => setActiveSubTab('fieldReport')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${
-              activeSubTab === 'fieldReport'
-                ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-            }`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition font-bold ${activeSubTab === 'fieldReport'
+              ? 'bg-sky-100 text-sky-800 border border-sky-300 shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+              }`}
           >
             <FileText size={14} /> Field Report
           </button>
@@ -659,9 +653,9 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
       {/* ================= HIGH-TECH PDC DRILL BIT GRAPHIC ================= */}
       <div className="rounded-xl overflow-hidden border border-slate-200 shadow-xs bg-white relative shrink-0">
         <div className="relative h-44 md:h-48 w-full">
-          <img 
-            src="/images/pdc_drill_bit_cutting.jpg" 
-            alt="PDC Matrix Drill Bit Rock Shearing Mechanics" 
+          <img
+            src="/images/pdc_drill_bit_cutting.jpg"
+            alt="PDC Matrix Drill Bit Rock Shearing Mechanics"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/60 to-transparent flex flex-col justify-between p-4 text-white">
@@ -717,8 +711,8 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
 
       {/* ================= TAB 1: MANUAL INPUT CALCULATOR FACILITY & AI SENSOR PREDICTOR ================= */}
       {activeSubTab === 'manualFacility' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
-          
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
+
           {/* Facility Header & Mode Switcher */}
           <div className="p-5 rounded-xl bg-white border border-slate-200 font-mono text-xs space-y-3 shadow-xs">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200">
@@ -805,17 +799,17 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
                   <span className="w-1.5 h-1.5 rounded-full bg-sky-500"></span> 91.5% WOB Transfer
                 </span>
               </div>
-                <div className="p-2 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
-                  <span className="text-slate-600">Standpipe Pressure Sensor:</span>
-                  <span className="text-emerald-700 font-bold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> {calcInputs.sppPsi} psi OK
-                  </span>
-                </div>
+              <div className="p-2 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
+                <span className="text-slate-600">Standpipe Pressure Sensor:</span>
+                <span className="text-emerald-700 font-bold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> {calcInputs.sppPsi} psi OK
+                </span>
               </div>
+            </div>
 
-              {/* 12 Parameter Input Boxes Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 pt-2">
-              
+            {/* 12 Parameter Input Boxes Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 pt-2">
+
               {/* Box 1: WOB */}
               <div className={`p-3 rounded-xl bg-slate-50 border transition shadow-xs ${facilityMode === 'aiPredicted' ? 'border-sky-400 bg-sky-50/50' : 'border-slate-200 focus-within:border-sky-500'}`}>
                 <div className="flex items-center justify-between mb-1">
@@ -1298,12 +1292,12 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
 
       {/* ================= TAB 2: AI PREDICTIVE COPILOT & SENSOR CORE ================= */}
       {activeSubTab === 'aiOptimizer' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            
+
             {/* Left 2 Cols: AI Real-Time Observation & Solution Prescription */}
             <div className="lg:col-span-2 space-y-4">
-              
+
               {/* AI Real-time Prescription Card */}
               <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-xs font-mono text-xs space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-slate-200">
@@ -1392,7 +1386,7 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
                 </div>
 
                 {/* Chat Messages */}
-                <div className="space-y-2.5 max-h-[340px] overflow-y-auto custom-scrollbar pr-1 font-mono text-xs">
+                <div className="space-y-2.5 max-h-[340px] custom-scrollbar pr-1 font-mono text-xs">
                   {aiChat.map((msg, idx) => (
                     <div key={idx} className={`p-3 rounded-lg border leading-relaxed shadow-xs ${msg.sender === 'USER' ? 'bg-sky-100 border-sky-300 text-sky-900 font-medium ml-4' : 'bg-slate-50 border-slate-200 text-slate-800'}`}>
                       <span className="text-[9px] font-black block mb-1 text-slate-500 uppercase">{msg.sender === 'USER' ? 'DRILLING SUPERINTENDENT' : 'OIL INDIA AI'}</span>
@@ -1441,7 +1435,7 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
 
       {/* ================= TAB 3: MECHANICS LAB & MAURER DRILL-OFF ================= */}
       {activeSubTab === 'mechanicsLab' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
           <div className="p-4 rounded-xl bg-scada-card border border-scada-border font-mono text-xs">
             <div className="flex items-center justify-between pb-2 border-b border-scada-border mb-3">
               <span className="font-bold text-white uppercase flex items-center gap-2">
@@ -1560,7 +1554,7 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
 
       {/* ================= TAB 4: SENSOR PLACEMENT & WEIGHT TRANSFER ================= */}
       {activeSubTab === 'sensorPlacement' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
           <div className="p-5 rounded-xl bg-scada-card border border-scada-border">
             <div className="flex items-center justify-between pb-3 border-b border-scada-border mb-4 font-mono">
               <span className="text-xs font-bold text-white uppercase">Rig Sensor Array Architecture & Observations</span>
@@ -1606,7 +1600,7 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
 
       {/* ================= TAB 5: AUTONOMOUS ANOMALY ENGINE ================= */}
       {activeSubTab === 'diagnostics' && (
-        <div className="space-y-4 flex-1 overflow-y-auto custom-scrollbar min-h-0">
+        <div className="space-y-4 flex-1 custom-scrollbar min-h-0">
           <div className="p-5 rounded-xl bg-scada-card border border-scada-border">
             <div className="flex items-center justify-between pb-3 border-b border-scada-border mb-4 font-mono">
               <span className="text-xs font-bold text-white uppercase">Autonomous Detection Findings</span>
@@ -1633,7 +1627,7 @@ Prescribed operating sweet spot: WOB ${mechanicsPrescription.optWob} klbs, RPM $
 
       {/* ================= TAB 6: FIELD OPERATIONS REPORT ================= */}
       {activeSubTab === 'fieldReport' && (
-        <div className="p-6 rounded-xl bg-scada-card border border-scada-border flex-1 overflow-y-auto custom-scrollbar font-mono text-xs space-y-6">
+        <div className="p-6 rounded-xl bg-scada-card border border-scada-border flex-1 custom-scrollbar font-mono text-xs space-y-6">
           <div className="flex items-center justify-between pb-4 border-b border-scada-border">
             <div>
               <div className="flex items-center gap-2">

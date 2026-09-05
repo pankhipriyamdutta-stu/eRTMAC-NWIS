@@ -63,7 +63,7 @@ const Devices = () => {
 
   return (
     <div className="flex flex-col h-full space-y-4 font-sans select-none">
-      
+
       {/* ================= HEADER ================= */}
       <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
@@ -121,7 +121,7 @@ const Devices = () => {
       </div>
 
       {/* ================= DEVICES GRID ================= */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 overflow-y-auto custom-scrollbar">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 custom-scrollbar">
         {devices.map((dev) => (
           <div key={dev.id} className="p-5 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
             <div>
