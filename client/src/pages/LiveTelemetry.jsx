@@ -89,7 +89,7 @@ const LiveTelemetry = () => {
 
   return (
     <div className="flex flex-col h-full space-y-4 font-sans select-none">
-      
+
       {/* ================= OIL INDIA EXECUTIVE OPERATIONS HEADER ================= */}
       <div className="p-4 rounded-xl bg-white border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4 shrink-0 shadow-sm">
         <div className="flex items-center gap-3.5">
@@ -147,21 +147,19 @@ const LiveTelemetry = () => {
       </div>
 
       {/* ================= AI TELEMETRY INTELLIGENCE DIRECTIVE BANNER ================= */}
-      <div className={`p-4 rounded-xl border-2 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all ${
-        telemetry.flowStatus === 'KICK_WARNING' || telemetry.ssiPct > 70 || telemetry.vibrationLateral > 1.2
-          ? 'bg-rose-50 border-rose-500 text-rose-950'
-          : telemetry.spp > 3500 || telemetry.wob > 32 || telemetry.mse > 45000
+      <div className={`p-4 rounded-xl border-2 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all ${telemetry.flowStatus === 'KICK_WARNING' || telemetry.ssiPct > 70 || telemetry.vibrationLateral > 1.2
+        ? 'bg-rose-50 border-rose-500 text-rose-950'
+        : telemetry.spp > 3500 || telemetry.wob > 32 || telemetry.mse > 45000
           ? 'bg-amber-50 border-amber-500 text-amber-950'
           : 'bg-emerald-50 border-emerald-500 text-emerald-950'
-      }`}>
+        }`}>
         <div className="flex items-start md:items-center gap-3.5">
-          <div className={`p-2.5 rounded-xl border shrink-0 ${
-            telemetry.flowStatus === 'KICK_WARNING' || telemetry.ssiPct > 70 || telemetry.vibrationLateral > 1.2
-              ? 'bg-rose-600 text-white border-rose-700 animate-pulse'
-              : telemetry.spp > 3500 || telemetry.wob > 32 || telemetry.mse > 45000
+          <div className={`p-2.5 rounded-xl border shrink-0 ${telemetry.flowStatus === 'KICK_WARNING' || telemetry.ssiPct > 70 || telemetry.vibrationLateral > 1.2
+            ? 'bg-rose-600 text-white border-rose-700 animate-pulse'
+            : telemetry.spp > 3500 || telemetry.wob > 32 || telemetry.mse > 45000
               ? 'bg-amber-600 text-white border-amber-700'
               : 'bg-emerald-600 text-white border-emerald-700'
-          }`}>
+            }`}>
             <Zap size={22} className="shrink-0" />
           </div>
           <div>
@@ -177,33 +175,32 @@ const LiveTelemetry = () => {
               {telemetry.flowStatus === 'KICK_WARNING'
                 ? `CRITICAL KICK INFLUX DETECTED: +${telemetry.deltaFlow} GPM MUD GAIN`
                 : telemetry.ssiPct > 70
-                ? `ALERT: DRILLSTRING TORSIONAL RESONANCE AT ${telemetry.ssiPct}% SSI`
-                : telemetry.vibrationLateral > 1.2
-                ? `WARNING: ELEVATED BHA LATERAL WHIRL AT ${telemetry.vibrationLateral} g RMS`
-                : telemetry.mse > 45000
-                ? `SUB-OPTIMAL MECHANICAL EFFICIENCY: TEALE MSE AT ${telemetry.mse.toLocaleString()} PSI`
-                : `OPTIMAL DRILLING DYNAMICS: 100% TELEMETRY INTEGRITY & NOMINAL HYDRAULICS`}
+                  ? `ALERT: DRILLSTRING TORSIONAL RESONANCE AT ${telemetry.ssiPct}% SSI`
+                  : telemetry.vibrationLateral > 1.2
+                    ? `WARNING: ELEVATED BHA LATERAL WHIRL AT ${telemetry.vibrationLateral} g RMS`
+                    : telemetry.mse > 45000
+                      ? `SUB-OPTIMAL MECHANICAL EFFICIENCY: TEALE MSE AT ${telemetry.mse.toLocaleString()} PSI`
+                      : `OPTIMAL DRILLING DYNAMICS: 100% TELEMETRY INTEGRITY & NOMINAL HYDRAULICS`}
             </h3>
             <p className="text-sm font-semibold text-slate-800 mt-1 max-w-4xl">
               {telemetry.flowStatus === 'KICK_WARNING'
                 ? `Delta flow rate has deviated by +${telemetry.deltaFlow} GPM with standpipe pressure drop of 80 psi. AI Directive: Space out drillstring, shut down mud pumps, shut in annular preventer on Cameron 15K BOP, and record SIDPP/SICP immediately.`
                 : telemetry.ssiPct > 70
-                ? `Torsional stick-slip amplitude exceeds safety envelope in Barail sands. AI Directive: Increase top drive rotary speed from ${telemetry.rpm} RPM by +15 RPM and trim WOB by -2.0 klbs to decouple harmonic bit stall.`
-                : telemetry.vibrationLateral > 1.2
-                ? `Downhole triaxial accelerometer signals severe lateral backward whirl. AI Directive: Modulate rotary speed down by 10 RPM to detune from 8.2 Hz BHA harmonic.`
-                : telemetry.mse > 45000
-                ? `Specific rock energy exceeds uniaxial compressive threshold (7,500 psi). AI Directive: Recalibrate WOB/RPM ratio to elevate instantaneous ROP above ${telemetry.rop} m/hr.`
-                : `Mechanical specific energy (${telemetry.mse.toLocaleString()} psi) is within 92% peak bit efficiency. Flow balance (Qin: ${telemetry.flowIn} GPM, Qout: ${telemetry.flowOut} GPM) stable with 0% influx risk.`}
+                  ? `Torsional stick-slip amplitude exceeds safety envelope in Barail sands. AI Directive: Increase top drive rotary speed from ${telemetry.rpm} RPM by +15 RPM and trim WOB by -2.0 klbs to decouple harmonic bit stall.`
+                  : telemetry.vibrationLateral > 1.2
+                    ? `Downhole triaxial accelerometer signals severe lateral backward whirl. AI Directive: Modulate rotary speed down by 10 RPM to detune from 8.2 Hz BHA harmonic.`
+                    : telemetry.mse > 45000
+                      ? `Specific rock energy exceeds uniaxial compressive threshold (7,500 psi). AI Directive: Recalibrate WOB/RPM ratio to elevate instantaneous ROP above ${telemetry.rop} m/hr.`
+                      : `Mechanical specific energy (${telemetry.mse.toLocaleString()} psi) is within 92% peak bit efficiency. Flow balance (Qin: ${telemetry.flowIn} GPM, Qout: ${telemetry.flowOut} GPM) stable with 0% influx risk.`}
             </p>
           </div>
         </div>
         <div className="shrink-0 flex md:flex-col items-end justify-between gap-1 text-right">
           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500">AUTONOMOUS STATUS</span>
-          <span className={`px-3 py-1 rounded-lg text-xs font-black tracking-wide border shadow-xs ${
-            telemetry.flowStatus === 'KICK_WARNING' || telemetry.ssiPct > 70
-              ? 'bg-rose-100 text-rose-800 border-rose-300 animate-pulse'
-              : 'bg-emerald-100 text-emerald-800 border-emerald-300'
-          }`}>
+          <span className={`px-3 py-1 rounded-lg text-xs font-black tracking-wide border shadow-xs ${telemetry.flowStatus === 'KICK_WARNING' || telemetry.ssiPct > 70
+            ? 'bg-rose-100 text-rose-800 border-rose-300 animate-pulse'
+            : 'bg-emerald-100 text-emerald-800 border-emerald-300'
+            }`}>
             {telemetry.flowStatus === 'KICK_WARNING' ? 'INTERVENTION REQUIRED' : 'SUPERVISORY LOCKED'}
           </span>
         </div>
@@ -252,8 +249,8 @@ const LiveTelemetry = () => {
       </div>
 
       {/* ================= MAIN CONTENT AREA ================= */}
-      <div className="flex-1 overflow-y-auto custom-scrollbar min-h-0">
-        
+      <div className="flex-1 custom-scrollbar min-h-0">
+
         {/* ================= TAB 1: SCADA GAUGES CLUSTER ================= */}
         {activeTab === 'gauges' && (
           <div className="space-y-4">
@@ -443,7 +440,7 @@ const LiveTelemetry = () => {
 
             {/* Depth Log Multi-Chart Visualization */}
             <div className="grid grid-cols-4 gap-3 h-[420px]">
-              
+
               {/* Track 1: Gamma Ray */}
               <div className="bg-slate-50/70 border border-slate-200 rounded-lg p-2 flex flex-col">
                 <div className="text-[10px] font-mono font-bold text-slate-600 flex justify-between px-2">
@@ -530,7 +527,7 @@ const LiveTelemetry = () => {
         {activeTab === 'vibration' && (
           <div className="space-y-4">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              
+
               {/* Left 2 Cols: Real-Time Triaxial Vibration Oscilloscope */}
               <div className="lg:col-span-2 p-5 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
                 <div className="flex items-center justify-between mb-3">
@@ -607,10 +604,10 @@ const LiveTelemetry = () => {
                     {telemetry.ssiPct > 70
                       ? `Severe torsional stick-slip active (SSI: ${telemetry.ssiPct}%). Drillstring resonant frequency matched at 3.5 Hz. Recommendation: Increase rotary speed from ${telemetry.rpm} RPM by +15 RPM, decrease WOB by 2.0 klbs to release bit torque wrap.`
                       : telemetry.vibrationLateral > 1.2
-                      ? `Elevated lateral vibration detected (${telemetry.vibrationLateral}g RMS). Backward BHA whirl pattern emerging. Recommendation: Reduce rotary RPM by 10-15 RPM and verify stabilizer wall contact.`
-                      : telemetry.vibrationAxial > 1.0
-                      ? `Bit bounce detected (${telemetry.vibrationAxial}g RMS axial acceleration). Weight transfer fluctuating. Recommendation: Increase WOB by +2.0 klbs to stabilize cutter engagement on bottom.`
-                      : `Drillstring dynamics operating in optimal harmonic window (SSI: ${telemetry.ssiPct}%, Lateral: ${telemetry.vibrationLateral}g). Steady weight transfer and minimal fatigue verified.`}
+                        ? `Elevated lateral vibration detected (${telemetry.vibrationLateral}g RMS). Backward BHA whirl pattern emerging. Recommendation: Reduce rotary RPM by 10-15 RPM and verify stabilizer wall contact.`
+                        : telemetry.vibrationAxial > 1.0
+                          ? `Bit bounce detected (${telemetry.vibrationAxial}g RMS axial acceleration). Weight transfer fluctuating. Recommendation: Increase WOB by +2.0 klbs to stabilize cutter engagement on bottom.`
+                          : `Drillstring dynamics operating in optimal harmonic window (SSI: ${telemetry.ssiPct}%, Lateral: ${telemetry.vibrationLateral}g). Steady weight transfer and minimal fatigue verified.`}
                   </p>
                 </div>
               </div>
@@ -677,7 +674,7 @@ const LiveTelemetry = () => {
         {activeTab === 'math' && (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              
+
               {/* Formula 1: Teale's MSE */}
               <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-sm font-mono text-xs">
                 <div className="flex items-center justify-between pb-2 border-b border-slate-200 mb-3">
@@ -688,9 +685,9 @@ const LiveTelemetry = () => {
                   MSE = (WOB / A_bit) + (120 × π × RPM × Torque) / (A_bit × ROP)
                 </div>
                 <div className="space-y-1.5 text-slate-700 text-[11px] font-medium">
-                  <p>• Bit Diameter: <strong className="text-slate-900">{currentWellData.bitSize}"</strong> → Area: <strong className="text-slate-900">{((Math.PI/4)*Math.pow(currentWellData.bitSize,2)).toFixed(2)} in²</strong></p>
-                  <p>• Axial Energy: <strong className="text-sky-700 font-bold">{((telemetry.wob * 1000) / ((Math.PI/4)*Math.pow(currentWellData.bitSize,2))).toFixed(0)} psi</strong></p>
-                  <p>• Rotary Energy: <strong className="text-indigo-700 font-bold">{(telemetry.mse - ((telemetry.wob * 1000) / ((Math.PI/4)*Math.pow(currentWellData.bitSize,2)))).toFixed(0)} psi</strong></p>
+                  <p>• Bit Diameter: <strong className="text-slate-900">{currentWellData.bitSize}"</strong> → Area: <strong className="text-slate-900">{((Math.PI / 4) * Math.pow(currentWellData.bitSize, 2)).toFixed(2)} in²</strong></p>
+                  <p>• Axial Energy: <strong className="text-sky-700 font-bold">{((telemetry.wob * 1000) / ((Math.PI / 4) * Math.pow(currentWellData.bitSize, 2))).toFixed(0)} psi</strong></p>
+                  <p>• Rotary Energy: <strong className="text-indigo-700 font-bold">{(telemetry.mse - ((telemetry.wob * 1000) / ((Math.PI / 4) * Math.pow(currentWellData.bitSize, 2)))).toFixed(0)} psi</strong></p>
                   <p>• Formation Compressive Strength: <strong className="text-emerald-700 font-bold">7,500 psi (Assam Sandstone)</strong></p>
                   <p>• Bit Cutting Efficiency: <strong className="text-emerald-700 font-bold">{telemetry.mseEfficiency}%</strong></p>
                 </div>
@@ -742,7 +739,7 @@ const LiveTelemetry = () => {
                 <div className="space-y-1.5 text-slate-700 text-[11px] font-medium">
                   <p>• Standpipe Pressure: <strong className="text-slate-900">{telemetry.spp} psi</strong></p>
                   <p>• Hydraulic Horsepower (HHP): <strong className="text-rose-700 font-bold">{telemetry.hhp} hp</strong></p>
-                  <p>• HHP per Square Inch (HSI): <strong className="text-sky-700 font-bold">{(telemetry.hhp / ((Math.PI/4)*Math.pow(currentWellData.bitSize,2))).toFixed(2)} hp/in²</strong></p>
+                  <p>• HHP per Square Inch (HSI): <strong className="text-sky-700 font-bold">{(telemetry.hhp / ((Math.PI / 4) * Math.pow(currentWellData.bitSize, 2))).toFixed(2)} hp/in²</strong></p>
                   <p>• Jet Impact Force: <strong className="text-emerald-700 font-bold">{telemetry.jif} lbf</strong></p>
                 </div>
               </div>
@@ -761,11 +758,10 @@ function TabButton({ active, onClick, icon, label }) {
   return (
     <button
       onClick={onClick}
-      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition ${
-        active
-          ? 'bg-sky-50 text-sky-700 border border-sky-300 shadow-xs'
-          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
-      }`}
+      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition ${active
+        ? 'bg-sky-50 text-sky-700 border border-sky-300 shadow-xs'
+        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+        }`}
     >
       {icon}
       <span>{label}</span>
@@ -780,14 +776,14 @@ function TelemetryCard({ title, value, unit, status, subtext, color }) {
   const cardBgBorder = isDanger
     ? 'border-rose-400 bg-rose-50/50'
     : isWarn
-    ? 'border-amber-400 bg-amber-50/50'
-    : 'border-slate-200 bg-white hover:border-slate-300';
+      ? 'border-amber-400 bg-amber-50/50'
+      : 'border-slate-200 bg-white hover:border-slate-300';
 
   const textColor = isDanger
     ? 'text-rose-700'
     : isWarn
-    ? 'text-amber-700'
-    : 'text-slate-900';
+      ? 'text-amber-700'
+      : 'text-slate-900';
 
   return (
     <div className={`p-3.5 rounded-xl ${cardBgBorder} border flex flex-col justify-between relative overflow-hidden transition shadow-xs`}>
